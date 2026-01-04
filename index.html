@@ -2,29 +2,55 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Rose for you</title>
+  <title>For my Muse...</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
     body {
         height: 100%;
         width: 100%;
         background: #080f1a;
         overflow: hidden;
-        }
+        margin: 0; /* Quan trọng để tránh scroll bar */
+    }
 
-        .container {
+    .container {
         position: absolute;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-        }
+        /* Tạo không gian tương đối để căn chỉnh các thành phần con */
+    }
 
-        .glass {
+    /* --- CSS MỚI CHO DÒNG CHỮ --- */
+    .gift-text {
+        position: absolute;
+        /* Căn giữa theo chiều ngang dựa trên container */
+        left: 50%;
+        transform: translateX(-50%);
+        /* Đưa lên trên bình hoa. Giá trị âm càng lớn càng lên cao */
+        top: -120px; 
+        
+        /* Style cho chữ */
+        color: #ffcce0; /* Màu hồng phấn sáng */
+        font-size: 40px;
+        font-family: 'Dancing Script', cursive, sans-serif; /* Sử dụng font viết tay nếu tải được */
+        text-align: center;
+        white-space: nowrap; /* Đảm bảo chữ nằm trên 1 dòng */
+        z-index: 20; /* Đảm bảo chữ nằm trên cùng */
+        /* Tạo hiệu ứng phát sáng nhẹ cho chữ */
+        text-shadow: 0 0 10px rgba(255, 204, 224, 0.8), 0 0 20px rgba(213, 45, 88, 0.5);
+    }
+    /* --------------------------- */
+
+
+    .glass {
         height: 350px;
         width: 200px;
         background: #122139;
         border-radius: 300px 300px 0px 0px;
-        }
-        .glass:before {
+    }
+    .glass:before {
         content: "";
         height: 10px;
         width: 10px;
@@ -34,8 +60,8 @@
         position: absolute;
         left: 87px;
         top: -25px;
-        }
-        .glass:after {
+    }
+    .glass:after {
         content: "";
         position: absolute;
         height: 15px;
@@ -43,9 +69,9 @@
         background: #a52a2a;
         top: 100%;
         left: -13%;
-        }
+    }
 
-        .shine {
+    .shine {
         width: 12px;
         height: 140px;
         background: white;
@@ -55,8 +81,8 @@
         top: 80px;
         border-radius: 100px;
         z-index: 10;
-        }
-        .shine:before {
+    }
+    .shine:before {
         content: "";
         width: 12px;
         height: 20px;
@@ -64,36 +90,36 @@
         background: white;
         top: 160px;
         border-radius: 100px;
-        }
+    }
 
-        .petals > div {
+    .petals > div {
         position: absolute;
         background: #d52d58;
         width: 45px;
         height: 80px;
         top: 55px;
         transition: all 0.5s ease-out;
-        }
-        .petals > div:nth-child(1) {
+    }
+    .petals > div:nth-child(1) {
         border-radius: 15px;
         box-shadow: 0px 0px 30px #f594b8;
         left: 80px;
         top: 60px;
         background: #d52d58;
-        }
-        .petals > div:nth-child(2), .petals > div:nth-child(4), .petals > div:nth-child(6) {
+    }
+    .petals > div:nth-child(2), .petals > div:nth-child(4), .petals > div:nth-child(6) {
         background: #b81b43;
         left: 60px;
         border-radius: 0px 30px 0px 30px;
         transform-origin: bottom right;
-        }
-        .petals > div:nth-child(3), .petals > div:nth-child(5), .petals > div:nth-child(7) {
+    }
+    .petals > div:nth-child(3), .petals > div:nth-child(5), .petals > div:nth-child(7) {
         background: #b81b43;
         left: 100px;
         border-radius: 30px 0px 30px 0px;
         transform-origin: bottom left;
-        }
-        .petals > div:nth-child(2) {
+    }
+    .petals > div:nth-child(2) {
         z-index: 5;
         background: #ab1a3f;
         top: 75px;
@@ -101,8 +127,8 @@
         box-shadow: 0px 0px 50px rgba(245, 148, 184, 0.5);
         animation: bloom2 3s ease-in-out;
         animation-fill-mode: forwards;
-        }
-        .petals > div:nth-child(3) {
+    }
+    .petals > div:nth-child(3) {
         z-index: 4;
         background: #ab1a3f;
         top: 75px;
@@ -110,8 +136,8 @@
         box-shadow: 0px 0px 50px rgba(245, 148, 184, 0.5);
         animation: bloom3 3s ease-in-out, glowing 2.5s ease-in-out infinite;
         animation-fill-mode: forwards;
-        }
-        .petals > div:nth-child(4) {
+    }
+    .petals > div:nth-child(4) {
         z-index: 3;
         background: #b81b43;
         top: 70px;
@@ -119,8 +145,8 @@
         box-shadow: 0px 0px 50px rgba(245, 148, 184, 0.5);
         animation: bloom4 3s ease-in-out, glowing 2.5s ease-in-out infinite;
         animation-fill-mode: forwards;
-        }
-        .petals > div:nth-child(5) {
+    }
+    .petals > div:nth-child(5) {
         z-index: 2;
         background: #b81b43;
         top: 70px;
@@ -128,8 +154,8 @@
         box-shadow: 0px 0px 50px rgba(245, 148, 184, 0.5);
         animation: bloom5 3s ease-in-out, glowing 2.5s ease-in-out infinite;
         animation-fill-mode: forwards;
-        }
-        .petals > div:nth-child(6) {
+    }
+    .petals > div:nth-child(6) {
         z-index: 1;
         background: #c9204b;
         top: 65px;
@@ -137,8 +163,8 @@
         box-shadow: 0px 0px 50px rgba(245, 148, 184, 0.3);
         animation: bloom6 3s ease-in-out, glowing 2.5s ease-in-out infinite;
         animation-fill-mode: forwards;
-        }
-        .petals > div:nth-child(7) {
+    }
+    .petals > div:nth-child(7) {
         z-index: 0;
         background: #c9204b;
         top: 65px;
@@ -146,9 +172,9 @@
         box-shadow: 0px 0px 50px rgba(245, 148, 184, 0.3);
         animation: bloom7 3s ease-in-out, glowing 2.5s ease-in-out infinite;
         animation-fill-mode: forwards;
-        }
+    }
 
-        .deadPetals > div {
+    .deadPetals > div {
         position: absolute;
         background: #d52d58;
         width: 20px;
@@ -157,29 +183,29 @@
         border-radius: 0px 30px 0px 30px;
         box-shadow: 0px 0px 30px rgba(245, 148, 184, 0.5);
         transition: all 0.5s ease-out;
-        }
-        .deadPetals > div:nth-child(1) {
+    }
+    .deadPetals > div:nth-child(1) {
         left: 67px;
         transform: rotate(-30deg);
         animation: falling 20s 4s ease-in-out infinite;
-        }
-        .deadPetals > div:nth-child(2) {
+    }
+    .deadPetals > div:nth-child(2) {
         left: 104px;
         transform: rotate(-30deg);
         animation: falling 20s 8s ease-in-out infinite;
-        }
-        .deadPetals > div:nth-child(3) {
+    }
+    .deadPetals > div:nth-child(3) {
         left: 91px;
         transform: rotate(-30deg);
         animation: falling 20s 12s ease-in-out infinite;
-        }
-        .deadPetals > div:nth-child(4) {
+    }
+    .deadPetals > div:nth-child(4) {
         left: 69px;
         transform: rotate(-30deg);
         animation: falling 20s 16s ease-in-out infinite;
-        }
+    }
 
-        .leaves > div:nth-last-child(1) {
+    .leaves > div:nth-last-child(1) {
         position: absolute;
         width: 55px;
         height: 30px;
@@ -187,8 +213,8 @@
         top: 120px;
         left: 75px;
         border-radius: 100px;
-        }
-        .leaves > div:nth-child(1) {
+    }
+    .leaves > div:nth-child(1) {
         position: absolute;
         width: 6px;
         height: 210px;
@@ -196,8 +222,8 @@
         top: 95px;
         left: 100px;
         border-radius: 0 0 100px 100px;
-        }
-        .leaves > div:nth-child(2) {
+    }
+    .leaves > div:nth-child(2) {
         position: absolute;
         width: 30px;
         height: 50px;
@@ -209,8 +235,8 @@
         top: 180px;
         left: 80px;
         box-shadow: inset 5px 5px #066406;
-        }
-        .leaves > div:nth-child(3) {
+    }
+    .leaves > div:nth-child(3) {
         position: absolute;
         width: 30px;
         height: 50px;
@@ -222,37 +248,37 @@
         top: 150px;
         left: 95px;
         box-shadow: inset -5px 5px #066406;
-        }
+    }
 
-        .thorns > div {
+    .thorns > div {
         position: absolute;
         width: 0;
         height: 0;
         top: 140px;
-        }
-        .thorns > div:nth-child(odd) {
+    }
+    .thorns > div:nth-child(odd) {
         border-top: 5px solid transparent;
         border-bottom: 5px solid transparent;
         border-left: 5px solid #054c05;
         left: 105px;
-        }
-        .thorns > div:nth-child(even) {
+    }
+    .thorns > div:nth-child(even) {
         border-top: 5px solid transparent;
         border-bottom: 5px solid transparent;
         border-right: 5px solid #054c05;
         left: 95px;
-        }
-        .thorns > div:nth-child(1) {
+    }
+    .thorns > div:nth-child(1) {
         top: 200px;
-        }
-        .thorns > div:nth-child(2) {
+    }
+    .thorns > div:nth-child(2) {
         top: 170px;
-        }
-        .thorns > div:nth-child(4) {
+    }
+    .thorns > div:nth-child(4) {
         top: 230px;
-        }
+    }
 
-        @keyframes bloom2 {
+    @keyframes bloom2 {
         50% {
             transform: rotate(-90deg);
             top: 200px;
@@ -265,39 +291,39 @@
             background: #71122a;
             box-shadow: 0px 0px 0px rgba(245, 148, 184, 0);
         }
-        }
-        @keyframes bloom3 {
+    }
+    @keyframes bloom3 {
         100% {
             transform: rotate(45deg);
         }
-        }
-        @keyframes bloom4 {
+    }
+    @keyframes bloom4 {
         100% {
             transform: rotate(-20deg);
         }
-        }
-        @keyframes bloom5 {
+    }
+    @keyframes bloom5 {
         100% {
             transform: rotate(20deg);
         }
-        }
-        @keyframes bloom6 {
+    }
+    @keyframes bloom6 {
         100% {
             transform: rotate(-5deg);
         }
-        }
-        @keyframes bloom7 {
+    }
+    @keyframes bloom7 {
         100% {
             transform: rotate(5deg);
         }
-        }
-        @keyframes glowing {
+    }
+    @keyframes glowing {
         50% {
             background: #d7365f;
             box-shadow: 0px 0px 60px #f594b8;
         }
-        }
-        @keyframes falling {
+    }
+    @keyframes falling {
         20% {
             top: 335px;
             background: #9d193b;
@@ -307,36 +333,38 @@
             top: 335px;
             opacity: 0;
         }
-        }
+    }
   </style>
 
 </head>
 <body>
 <div class="container">
-	<div class="glass">
+  <div class="gift-text">For my Muse🌹</div>
+
+  <div class="glass">
     <div class="shine"></div>
   </div>
-	<div class="thorns">
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
-	</div>
-	<div class="leaves">
-		<div></div>
-		<div></div>
+  <div class="thorns">
     <div></div>
     <div></div>
-	</div>
-	<div class="petals">
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
-	</div>
+    <div></div>
+    <div></div>
+  </div>
+  <div class="leaves">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <div class="petals">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
   <div class="deadPetals">
     <div></div>
     <div></div>
